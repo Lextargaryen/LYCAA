@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { Crown, Eye } from 'lucide-react'
-import { signInWithGoogle } from '@/lib/auth-actions'
 import { useState } from 'react'
 
 interface LoginViewProps {
@@ -11,13 +10,30 @@ interface LoginViewProps {
 
 export function LoginView({ onViewCandidates }: LoginViewProps) {
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleGoogleSignIn = async () => {
     setIsLoading(true)
+    setError('')
     try {
-      await signInWithGoogle()
+      const response = await fetch('/api/auth', {
+        method: 'POST',
+      })
+
+      const data = await response.json()
+
+      if (!response.ok || !data.url) {
+        console.error('[v0] OAuth error:', data)
+        setError(data.error || 'Failed to initiate sign in. Please try again.')
+        setIsLoading(false)
+        return
+      }
+
+      // Redirect to Google OAuth
+      window.location.href = data.url
     } catch (error) {
-      console.error('Sign in error:', error)
+      console.error('[v0] Sign in error:', error)
+      setError('Failed to sign in. Please check your connection and try again.')
       setIsLoading(false)
     }
   }
@@ -65,6 +81,17 @@ export function LoginView({ onViewCandidates }: LoginViewProps) {
             <span className="text-xs text-muted-foreground uppercase tracking-widest">Sign In</span>
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
           </div>
+
+          {/* Error message */}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg"
+            >
+              <p className="text-sm text-red-700">{error}</p>
+            </motion.div>
+          )}
 
           {/* Google Sign In Button */}
           <motion.button
