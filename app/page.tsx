@@ -6,17 +6,24 @@ import type { Candidate } from '@/lib/types'
 export default async function Page() {
   const supabase = await createClient()
   
-  // Fetch candidates from database
-  const { data: candidatesData } = await supabase
-    .from('candidates')
-    .select('*')
-    .order('votes', { ascending: false })
-  
-  // Get current user (if logged in)
-  const user = await getCurrentUser()
-  
-  // Get user's votes (if logged in)
-  const userVotes = user ? await getUserVotes() : { femaleVotes: [], maleVotes: [] }
+  let candidatesData = null
+  let user = null
+  let userVotes = { femaleVotes: [], maleVotes: [] }
+
+  // Fetch candidates from database if Supabase is configured
+  if (supabase) {
+    const result = await supabase
+      .from('candidates')
+      .select('*')
+      .order('votes', { ascending: false })
+    candidatesData = result.data
+    
+    // Get current user (if logged in)
+    user = await getCurrentUser()
+    
+    // Get user's votes (if logged in)
+    userVotes = user ? await getUserVotes() : { femaleVotes: [], maleVotes: [] }
+  }
 
   const candidates: Candidate[] = (candidatesData || []).map(c => ({
     id: c.id,

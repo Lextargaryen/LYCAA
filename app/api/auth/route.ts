@@ -3,25 +3,36 @@ import { NextResponse } from 'next/server'
 import { isAllowedEmail, getUserRole } from '@/lib/types'
 
 export async function POST(request: Request) {
-  const supabase = await createClient()
-  const origin = new URL(request.url).origin
+  try {
+    const supabase = await createClient()
+    const origin = new URL(request.url).origin
 
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: 'google',
-    options: {
-      redirectTo: process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ?? `${origin}/auth/callback`,
-      queryParams: {
-        access_type: 'offline',
-        prompt: 'consent',
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ?? `${origin}/auth/callback`,
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent',
+        },
       },
-    },
-  })
+    })
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 400 })
+    if (error) {
+      console.error('[v0] OAuth error:', error)
+      return NextResponse.json({ 
+        error: error.message || 'OAuth provider not enabled. Please enable Google OAuth in Supabase project settings.',
+        code: error.code 
+      }, { status: 400 })
+    }
+
+    return NextResponse.json({ url: data.url })
+  } catch (err) {
+    console.error('[v0] Auth route error:', err)
+    return NextResponse.json({ 
+      error: 'Authentication service error. Please check your Supabase configuration.'
+    }, { status: 500 })
   }
-
-  return NextResponse.json({ url: data.url })
 }
 
 export async function GET() {
