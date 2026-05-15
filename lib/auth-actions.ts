@@ -9,55 +9,35 @@ const ADMIN_EMAILS = ['e24417@eng.pdn.ac.lk']
 // Valid email pattern: e24XXX@eng.pdn.ac.lk
 const VALID_EMAIL_PATTERN = /^e24\d{3}@eng\.pdn\.ac\.lk$/
 
-export async function signInWithEmail(email: string, password: string) {
+export async function signInWithGoogle() {
   try {
     const supabase = await createClient()
+    
+    const redirectUrl = process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ?? 
+      `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/auth/callback`
 
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
-
-    if (error) {
-      console.error('[v0] Sign in error:', error)
-      return { error: error.message || 'Failed to sign in' }
-    }
-
-    if (data.user) {
-      redirect('/app')
-    }
-  } catch (err) {
-    console.error('[v0] Sign in error:', err)
-    return { error: 'Authentication failed' }
-  }
-}
-
-export async function signUpWithEmail(email: string, password: string) {
-  try {
-    // Validate email format
-    if (!VALID_EMAIL_PATTERN.test(email) && !ADMIN_EMAILS.includes(email)) {
-      return { error: 'Invalid email. Must be e24XXX@eng.pdn.ac.lk format.' }
-    }
-
-    const supabase = await createClient()
-
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
       options: {
-        emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/auth/callback`,
+        redirectTo: redirectUrl,
+        queryParams: {
+          access_type: 'offline',
+          prompt: 'consent',
+        },
       },
     })
 
     if (error) {
-      console.error('[v0] Sign up error:', error)
-      return { error: error.message || 'Failed to create account' }
+      console.error('[v0] OAuth error:', error)
+      return { error: error.message || 'OAuth provider not enabled' }
     }
 
-    return { data, message: 'Account created! Check your email to confirm.' }
+    if (data.url) {
+      redirect(data.url)
+    }
   } catch (err) {
-    console.error('[v0] Sign up error:', err)
-    return { error: 'Failed to create account' }
+    console.error('[v0] Sign in error:', err)
+    return { error: 'Authentication failed. Please ensure Google OAuth is enabled in Supabase.' }
   }
 }
 
