@@ -10,8 +10,9 @@ export async function createClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
+  // Return null if credentials are missing - allows app to work without Supabase
   if (!url || !key) {
-    throw new Error('Supabase URL and ANON_KEY environment variables are required. Check your .env.local file.')
+    return null as any
   }
 
   const cookieStore = await cookies()
