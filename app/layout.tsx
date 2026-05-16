@@ -14,21 +14,21 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Elegance Pageant | Vote for Your Favorite',
-  description: 'Cast your vote for the most elegant candidates in this year\'s beauty pageant',
+  title: 'Avurudu Wasanthaya | Vote for Your Favorite',
+  description: 'Cast your vote for the most elegant candidates in this year\'s Avurudu Wasanthaya',
   generator: 'v0.app',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: 'https://drive.google.com/file/d/1xGKoN1Bz1sY0U9TEZEUDuvgc9l5Y8GCn/view?usp=drive_link',
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: 'https://drive.google.com/file/d/1xGKoN1Bz1sY0U9TEZEUDuvgc9l5Y8GCn/view?usp=drive_link',
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: 'https://drive.google.com/file/d/1xGKoN1Bz1sY0U9TEZEUDuvgc9l5Y8GCn/view?usp=drive_link',
         type: 'image/svg+xml',
       },
     ],
