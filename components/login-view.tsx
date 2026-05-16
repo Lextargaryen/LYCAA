@@ -109,7 +109,7 @@ export function LoginView({ onViewCandidates }: LoginViewProps) {
             className="mt-4 p-3 bg-gold/5 border border-gold/20 rounded-lg"
           >
             <p className="text-xs text-muted-foreground text-center">
-              Voting requires an <span className="font-medium text-charcoal">e24XXX@eng.pdn.ac.lk</span> email address
+              Voting requires an <span className="font-medium text-charcoal">eXXXXX@eng.pdn.ac.lk</span> email address
             </p>
           </motion.div>
 
