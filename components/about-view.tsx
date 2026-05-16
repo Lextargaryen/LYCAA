@@ -55,7 +55,7 @@ export function AboutView({ user, onNavigate }: AboutViewProps) {
               <div className="w-8 h-8 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center">
                 <Crown className="w-4 h-4 text-cream" />
               </div>
-              <span className="font-serif text-xl text-charcoal hidden sm:block">Elegance Pageant</span>
+              <span className="font-serif text-xl text-charcoal hidden sm:block">Avurudu Wasanthaya</span>
             </div>
 
             {/* Nav Links */}
@@ -228,9 +228,9 @@ export function AboutView({ user, onNavigate }: AboutViewProps) {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">Voting Rules</h2>
+            <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4"></h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Please review the guidelines below to ensure a fair and transparent voting process for all participants.
+          
             </p>
           </motion.div>
 
@@ -297,7 +297,7 @@ export function AboutView({ user, onNavigate }: AboutViewProps) {
                 <div className="w-10 h-10 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center">
                   <Crown className="w-5 h-5 text-cream" />
                 </div>
-                <span className="font-serif text-xl">Elegance Pageant</span>
+                <span className="font-serif text-xl">Avurudu Wasanthaya</span>
               </div>
               <p className="text-white/60 text-sm leading-relaxed">
                 Celebrating beauty, grace, and excellence.
@@ -310,7 +310,7 @@ export function AboutView({ user, onNavigate }: AboutViewProps) {
               <div className="space-y-3">
                 <a href="mailto:info@elegancepageant.com" className="flex items-center gap-3 text-white/60 hover:text-gold transition-colors text-sm">
                   <Mail className="w-4 h-4" />
-                  info@elegancepageant.com
+                  
                 </a>
                 <a href="tel:+1234567890" className="flex items-center gap-3 text-white/60 hover:text-gold transition-colors text-sm">
                   <Phone className="w-4 h-4" />
@@ -325,19 +325,19 @@ export function AboutView({ user, onNavigate }: AboutViewProps) {
 
             {/* Support */}
             <div>
-              <h3 className="font-serif text-lg mb-4">Need Help?</h3>
+              <h3 className="font-serif text-lg mb-4"></h3>
               <p className="text-white/60 text-sm mb-4">
-                Having trouble voting or have questions about the pageant?
+      
               </p>
               <button className="bg-gradient-to-r from-gold to-gold-dark text-charcoal font-medium px-6 py-2.5 rounded-xl hover:shadow-lg transition-all text-sm">
-                Get Support
+
               </button>
             </div>
           </motion.div>
 
           <div className="border-t border-white/10 mt-12 pt-8 text-center">
             <p className="text-white/40 text-sm">
-              © 2024 Elegance Pageant. All rights reserved.
+              
             </p>
           </div>
         </div>
