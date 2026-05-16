@@ -124,13 +124,7 @@ export function HomeView({ candidates, user, userVotes, onVotesUpdate, onNavigat
                 <Home className="w-4 h-4" />
                 <span className="hidden sm:inline">Home</span>
               </button>
-              <button
-                onClick={() => onNavigate('about')}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg text-muted-foreground hover:text-charcoal hover:bg-muted font-medium text-sm transition-colors"
-              >
-                <Info className="w-4 h-4" />
-                <span className="hidden sm:inline"></span>
-              </button>
+
               {user.isAdmin && (
                 <button
                   onClick={() => onNavigate('admin')}
