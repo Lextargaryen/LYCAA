@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 
 // Admin emails that have full access
-const ADMIN_EMAILS = ['e24417@eng.pdn.ac.lk', 'e24416@eng.pdn.ac.lk', 'e24308@eng.pdn.ac.lk', 'e24115@eng.pdn.ac.lk', 'e24415@eng.pdn.ac.lk']
+const ADMIN_EMAILS = ['e24417@eng.pdn.ac.lk', 'e24416@eng.pdn.ac.lk', 'e24308@eng.pdn.ac.lk', 'e24115@eng.pdn.ac.lk', 'e24415@eng.pdn.ac.lk', 'e24284@eng.pdn.ac.lk']
 
 // Valid email pattern: e24XXX@eng.pdn.ac.lk
 const VALID_EMAIL_PATTERN = /^e\d{2}\d{3}@eng\.pdn\.ac\.lk$/
