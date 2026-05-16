@@ -112,7 +112,7 @@ export function HomeView({ candidates, user, userVotes, onVotesUpdate, onNavigat
               <div className="w-8 h-8 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center">
                 <Crown className="w-4 h-4 text-cream" />
               </div>
-              <span className="font-serif text-xl text-charcoal hidden sm:block">Elegance Pageant</span>
+              <span className="font-serif text-xl text-charcoal hidden sm:block">Avurudu Wasanthaya</span>
             </div>
 
             {/* Nav Links */}
