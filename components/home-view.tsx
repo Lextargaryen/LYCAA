@@ -112,7 +112,7 @@ export function HomeView({ candidates, user, userVotes, onVotesUpdate, onNavigat
               <div className="w-8 h-8 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center">
                 <Crown className="w-4 h-4 text-cream" />
               </div>
-              <span className="font-serif text-xl text-charcoal hidden sm:block">Elegance Pageant</span>
+              <span className="font-serif text-xl text-charcoal hidden sm:block">Avurudu Wasanthaya</span>
             </div>
 
             {/* Nav Links */}
@@ -129,7 +129,7 @@ export function HomeView({ candidates, user, userVotes, onVotesUpdate, onNavigat
                 className="flex items-center gap-2 px-4 py-2 rounded-lg text-muted-foreground hover:text-charcoal hover:bg-muted font-medium text-sm transition-colors"
               >
                 <Info className="w-4 h-4" />
-                <span className="hidden sm:inline">About</span>
+                <span className="hidden sm:inline"></span>
               </button>
               {user.isAdmin && (
                 <button
@@ -189,13 +189,7 @@ export function HomeView({ candidates, user, userVotes, onVotesUpdate, onNavigat
                         </div>
                       </div>
                       <div className="p-2">
-                        <button
-                          onClick={handleSignOut}
-                          className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-destructive/10 transition-colors text-left"
-                        >
-                          <LogOut className="w-4 h-4 text-destructive" />
-                          <span className="text-sm text-destructive">Sign Out</span>
-                        </button>
+
                       </div>
                     </motion.div>
                   )}
