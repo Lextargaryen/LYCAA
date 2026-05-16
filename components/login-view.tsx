@@ -52,7 +52,7 @@ export function LoginView({ onViewCandidates }: LoginViewProps) {
               </div>
             </div>
             <h1 className="font-serif text-3xl md:text-4xl text-charcoal mb-2">
-              Elegance Pageant
+              Avurudu Wasanthaya
             </h1>
             <p className="text-muted-foreground text-sm">
               Cast your vote for excellence
