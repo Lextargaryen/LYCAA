@@ -248,7 +248,7 @@ export function HomeView({ candidates, user, userVotes, onVotesUpdate, onNavigat
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <div className="flex items-center justify-center gap-3">
               <span className="text-sm text-amber-800">
-                Sign in with your <span className="font-medium">e24XXX@eng.pdn.ac.lk</span> email to vote
+                Sign in with your <span className="font-medium">eXXXXX@eng.pdn.ac.lk</span> email to vote
               </span>
               <button
                 onClick={onLoginRequired}
