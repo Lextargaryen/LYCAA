@@ -464,4 +464,38 @@ export function HomeView({ candidates, user, userVotes, onVotesUpdate, onNavigat
       </main>
     </div>
   )
+import React from 'react';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="w-full bg-gray-900 text-gray-300 py-8 px-6 mt-auto shadow-inner">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        {/* The Rectangular Alpha PNG Logo */}
+        <div className="flex-shrink-0 transition-transform hover:scale-105 duration-300">
+          <img
+            // Hey! Do not forget to replace this src with the actual path to your logo!
+            src="/path-to-your-logo/alpha-logo.png" 
+            alt="Awurudu Wasanthaya Logo"
+            className="h-16 w-auto object-contain" 
+          />
+        </div>
+
+        {/* The Credit Text */}
+        <div className="text-center md:text-right">
+          <p className="text-sm md:text-base font-medium">
+            Built with love by the organizers of <span className="text-white font-bold tracking-wide">Awurudu Wasanthaya 2023</span>
+          </p>
+          <p className="text-xs md:text-sm mt-1 text-gray-400">
+            Faculty of Engineering, University of Peradeniya
+          </p>
+        </div>
+        
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
 }
