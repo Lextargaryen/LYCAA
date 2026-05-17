@@ -376,8 +376,8 @@ export function HomeView({ candidates, user, userVotes, onVotesUpdate, onNavigat
             className="mb-12"
           >
             <div className="text-center mb-6">
-              <h2 className="font-serif text-2xl md:text-3xl text-charcoal mb-2">The Winners Circle</h2>
-              <p className="text-muted-foreground text-sm">Current top candidates based on votes</p>
+              <h2 className="font-serif text-2xl md:text-3xl text-charcoal mb-2">Most Popular Contestant</h2>
+              <p className="text-muted-foreground text-sm">Current top candidates based on student votes</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
