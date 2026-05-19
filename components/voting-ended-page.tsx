@@ -75,7 +75,7 @@ export function VotingEndedPage() {
   const maleWinners = WINNERS.filter(w => w.category === 'male')
 
   return (
-<div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       {/* Header - Event Image */}
       <section className={`pt-12 pb-16 px-4 sm:px-6 lg:px-8 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
         <div className="max-w-5xl mx-auto">
@@ -89,7 +89,6 @@ export function VotingEndedPage() {
           </div>
         </div>
       </section>
-    </div>
 
       {/* Voting Ended Title */}
       <section className={`py-12 px-4 sm:px-6 lg:px-8 text-center ${isLoaded ? 'animate-fade-in-up animate-delay-100' : 'opacity-0'}`}>
