@@ -148,7 +148,7 @@ export function VotingEndedPage() {
           </p>
           <div className="mt-12 pt-8 border-t border-border">
             <p className="text-xs sm:text-sm text-muted-foreground tracking-widest uppercase">
-              Avurudu Wasanthaya
+              Avurudu Wasanthaya 2026
             </p>
           </div>
         </div>
