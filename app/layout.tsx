@@ -14,8 +14,8 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Avurudu Wasanthaya | Vote for Your Favorite',
-  description: 'Cast your vote for the most elegant candidates in this year\'s Avurudu Wasanthaya',
+  title: 'Voting Ended | Avurudu Wasanthaya - Winners Announced',
+  description: 'Celebrating the winners of Avurudu Wasanthaya. Thank you for participating in this year\'s event.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} bg-background`}>
-      <body className="font-sans antialiased min-h-screen">
+      <body className="font-sans antialiased min-h-screen bg-background text-foreground">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

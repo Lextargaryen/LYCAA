@@ -4,42 +4,42 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Light Golden Theme - Beauty Pageant */
-  --background: oklch(0.98 0.008 85);
-  --foreground: oklch(0.25 0.02 60);
-  --card: oklch(1 0 0 / 0.8);
-  --card-foreground: oklch(0.25 0.02 60);
-  --popover: oklch(0.99 0.005 85);
-  --popover-foreground: oklch(0.25 0.02 60);
-  --primary: oklch(0.72 0.12 75);
-  --primary-foreground: oklch(0.2 0.03 60);
-  --secondary: oklch(0.95 0.015 85);
-  --secondary-foreground: oklch(0.3 0.02 60);
-  --muted: oklch(0.94 0.01 85);
-  --muted-foreground: oklch(0.5 0.02 60);
-  --accent: oklch(0.82 0.1 80);
-  --accent-foreground: oklch(0.2 0.03 60);
+  /* Light Minimalist Elegant Theme */
+  --background: oklch(0.98 0.003 0);
+  --foreground: oklch(0.25 0.01 0);
+  --card: oklch(0.99 0.002 0);
+  --card-foreground: oklch(0.25 0.01 0);
+  --popover: oklch(0.99 0.002 0);
+  --popover-foreground: oklch(0.25 0.01 0);
+  --primary: oklch(0.5 0.05 0);
+  --primary-foreground: oklch(0.98 0.002 0);
+  --secondary: oklch(0.92 0.01 0);
+  --secondary-foreground: oklch(0.25 0.01 0);
+  --muted: oklch(0.88 0.005 0);
+  --muted-foreground: oklch(0.5 0.02 0);
+  --accent: oklch(0.45 0.08 75);
+  --accent-foreground: oklch(0.98 0.002 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.88 0.03 80);
-  --input: oklch(0.92 0.02 85);
-  --ring: oklch(0.72 0.12 75);
-  --chart-1: oklch(0.72 0.12 75);
-  --chart-2: oklch(0.65 0.1 80);
-  --chart-3: oklch(0.55 0.08 70);
-  --chart-4: oklch(0.75 0.08 85);
-  --chart-5: oklch(0.6 0.1 75);
-  --radius: 0.75rem;
+  --border: oklch(0.92 0.008 0);
+  --input: oklch(0.94 0.005 0);
+  --ring: oklch(0.5 0.08 75);
+  --chart-1: oklch(0.5 0.08 75);
+  --chart-2: oklch(0.55 0.07 70);
+  --chart-3: oklch(0.48 0.06 60);
+  --chart-4: oklch(0.52 0.08 80);
+  --chart-5: oklch(0.5 0.07 75);
+  --radius: 0.5rem;
   
-  /* Custom golden theme colors */
-  --gold: oklch(0.78 0.14 75);
-  --gold-light: oklch(0.88 0.1 80);
-  --gold-dark: oklch(0.6 0.12 70);
-  --champagne: oklch(0.92 0.04 85);
-  --cream: oklch(0.97 0.01 90);
-  --charcoal: oklch(0.25 0.02 60);
-  --silver: oklch(0.75 0.01 260);
-  --bronze: oklch(0.6 0.1 55);
+  /* Custom elegant minimalist colors */
+  --gold: oklch(0.68 0.12 75);
+  --gold-light: oklch(0.78 0.1 80);
+  --gold-dark: oklch(0.55 0.1 70);
+  --cream: oklch(0.98 0.003 0);
+  --charcoal: oklch(0.25 0.01 0);
+  --light-gray: oklch(0.92 0.01 0);
+  --silver: oklch(0.7 0.02 260);
+  --bronze: oklch(0.58 0.08 55);
 }
 
 @theme inline {
@@ -79,9 +79,9 @@
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-dark: var(--gold-dark);
-  --color-champagne: var(--champagne);
   --color-cream: var(--cream);
   --color-charcoal: var(--charcoal);
+  --color-light-gray: var(--light-gray);
   --color-silver: var(--silver);
   --color-bronze: var(--bronze);
 }
@@ -95,17 +95,142 @@
   }
 }
 
+/* Fluid animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Stagger animation delays */
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animate-delay-600 {
+  animation-delay: 600ms;
+}
+
 /* Glass morphism utilities */
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .glass-card {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
