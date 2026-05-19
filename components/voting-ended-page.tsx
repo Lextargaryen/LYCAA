@@ -1,4 +1,4 @@
-'use client'
+  'use client'
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
@@ -16,20 +16,20 @@ interface Winner {
 const FEMALE_WINNERS: Winner[] = [
   {
     rank: 'first',
-    name: 'First Place Winner',
-    imageUrl: '', // Paste image URL here
+    name: 'Navodya Ranasinghe',
+    imageUrl: 'https://raw.githubusercontent.com/Lextargaryen/temp/1b11484e92d35052e90817c627216fff16abf434/nawodya.png', // Paste image URL here
     category: 'female',
   },
   {
     rank: 'second',
-    name: 'Second Place Winner',
-    imageUrl: '', // Paste image URL here
+    name: 'Imasha Minsandi',
+    imageUrl: 'https://raw.githubusercontent.com/Lextargaryen/temp/1b11484e92d35052e90817c627216fff16abf434/winnersd.png', // Paste image URL here
     category: 'female',
   },
   {
     rank: 'third',
-    name: 'Third Place Winner',
-    imageUrl: '', // Paste image URL here
+    name: 'Vishmi  Daniel',
+    imageUrl: 'https://raw.githubusercontent.com/Lextargaryen/temp/1b11484e92d35052e90817c627216fff16abf434/vishmi.png', // Paste image URL here
     category: 'female',
   },
 ]
@@ -37,20 +37,20 @@ const FEMALE_WINNERS: Winner[] = [
 const MALE_WINNERS: Winner[] = [
   {
     rank: 'first',
-    name: 'First Place Winner',
-    imageUrl: '', // Paste image URL here
+    name: 'Rashinda Adithya',
+    imageUrl: 'https://raw.githubusercontent.com/Lextargaryen/temp/1b11484e92d35052e90817c627216fff16abf434/rando2.png', // Paste image URL here
     category: 'male',
   },
   {
     rank: 'second',
-    name: 'Second Place Winner',
-    imageUrl: '', // Paste image URL here
+    name: 'Isuru Jayasinghe',
+    imageUrl: 'https://raw.githubusercontent.com/Lextargaryen/temp/1b11484e92d35052e90817c627216fff16abf434/isuru.png', // Paste image URL here
     category: 'male',
   },
   {
     rank: 'third',
-    name: 'Third Place Winner',
-    imageUrl: '', // Paste image URL here
+    name: 'Nadula Gayan',
+    imageUrl: 'https://raw.githubusercontent.com/Lextargaryen/temp/a3788e15a6963968c07c9d9fe43329a0202cb6ff/nadun.png', // Paste image URL here
     category: 'male',
   },
 ]
