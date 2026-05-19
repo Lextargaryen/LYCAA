@@ -82,7 +82,7 @@ export function VotingEndedPage() {
           {/* Title Image Container */}
           <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg bg-gradient-to-br from-light-gray via-background to-white border border-border flex items-center justify-center overflow-hidden relative">
             <img 
-              src="https://raw.githubusercontent.com/Lextargaryen/temp/24bfa08f596545c7dcbc98d5b6702958325452ac/MAIN_TEXT_LOW.png" 
+              src="https://raw.githubusercontent.com/Lextargaryen/temp/0e15e079db84ddf0dc1c8821833b8d81efef6a14/TEXTFINNN.png" 
               alt="Event Title" 
               className="w-full h-full object-cover"
             />
