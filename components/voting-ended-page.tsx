@@ -206,7 +206,7 @@ function WinnerCard({ winner, delay }: { winner: Winner; delay: number }) {
               {winner.category === 'female' ? 'Female' : 'Male'} Winner
             </p>
           </div>
-        </div>
+        </div> )
 
         {/* Subtle hover effect for first place */}
         {winner.rank === 'first' && (
