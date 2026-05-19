@@ -80,7 +80,7 @@ export function VotingEndedPage() {
       <section className={`pt-12 pb-16 px-4 sm:px-6 lg:px-8 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
         <div className="max-w-5xl mx-auto">
           {/* Title Image Container */}
-          <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg bg-gradient-to-br from-light-gray via-background to-white border border-border flex items-center justify-center overflow-hidden relative">
+          <div className="w-full h-80 sm:h-100 lg:h-120 rounded-lg bg-gradient-to-br from-light-gray via-background to-white border border-border flex items-center justify-center overflow-hidden relative">
             <img 
               src="https://raw.githubusercontent.com/Lextargaryen/temp/0e15e079db84ddf0dc1c8821833b8d81efef6a14/TEXTFINNN.png" 
               alt="Event Title" 
