@@ -14,8 +14,8 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Avurudu Wasanthaya | Vote for Your Favorite',
-  description: 'Cast your vote for the most elegant candidates in this year\'s Avurudu Wasanthaya',
+  title: 'Voting Ended | Avurudu Wasanthaya - Winners Announced',
+  description: 'Celebrating the winners of Avurudu Wasanthaya. Thank you for participating in this year\'s event.',
   generator: 'v0.app',
   icons: {
     icon: [
