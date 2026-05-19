@@ -1,22 +1,62 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 interface Winner {
   rank: 'first' | 'second' | 'third'
   name: string
+  imageUrl: string
   category: 'male' | 'female'
 }
 
-// Placeholder winners data
-const WINNERS: Winner[] = [
-  { rank: 'first', name: 'Winner Name', category: 'female' },
-  { rank: 'second', name: 'Runner Up Name', category: 'female' },
-  { rank: 'third', name: 'Third Place Name', category: 'female' },
-  { rank: 'first', name: 'Winner Name', category: 'male' },
-  { rank: 'second', name: 'Runner Up Name', category: 'male' },
-  { rank: 'third', name: 'Third Place Name', category: 'male' },
+// ============================================
+// EDIT THIS SECTION TO ADD WINNER DATA
+// ============================================
+const FEMALE_WINNERS: Winner[] = [
+  {
+    rank: 'first',
+    name: 'First Place Winner',
+    imageUrl: '', // Paste image URL here
+    category: 'female',
+  },
+  {
+    rank: 'second',
+    name: 'Second Place Winner',
+    imageUrl: '', // Paste image URL here
+    category: 'female',
+  },
+  {
+    rank: 'third',
+    name: 'Third Place Winner',
+    imageUrl: '', // Paste image URL here
+    category: 'female',
+  },
 ]
+
+const MALE_WINNERS: Winner[] = [
+  {
+    rank: 'first',
+    name: 'First Place Winner',
+    imageUrl: '', // Paste image URL here
+    category: 'male',
+  },
+  {
+    rank: 'second',
+    name: 'Second Place Winner',
+    imageUrl: '', // Paste image URL here
+    category: 'male',
+  },
+  {
+    rank: 'third',
+    name: 'Third Place Winner',
+    imageUrl: '', // Paste image URL here
+    category: 'male',
+  },
+]
+
+const WINNERS: Winner[] = [...FEMALE_WINNERS, ...MALE_WINNERS]
+// ============================================
 
 const rankConfig = {
   first: { medal: '🥇', label: 'First Place', color: 'bg-gold/10 border-gold/30' },
@@ -127,12 +167,20 @@ function WinnerCard({ winner, delay }: { winner: Winner; delay: number }) {
       <div className="relative group h-full">
         {/* Card Container */}
         <div className={`${config.color} border-2 rounded-xl overflow-hidden transition-all duration-500 h-full flex flex-col hover:border-accent/50 hover:shadow-lg`}>
-          {/* Image Placeholder */}
+          {/* Image Container */}
           <div className="relative w-full aspect-square bg-gradient-to-br from-light-gray to-background flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/5" />
-            <div className="text-center z-10">
-              <p className="text-muted-foreground text-sm">Winner Image</p>
-            </div>
+            {winner.imageUrl ? (
+              <Image
+                src={winner.imageUrl}
+                alt={winner.name}
+                fill
+                className="object-cover"
+              />
+            ) : (
+              <div className="text-center z-10">
+                <p className="text-muted-foreground text-sm">Image URL not set</p>
+              </div>
+            )}
           </div>
 
           {/* Content */}
