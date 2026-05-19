@@ -75,17 +75,21 @@ export function VotingEndedPage() {
   const maleWinners = WINNERS.filter(w => w.category === 'male')
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header - Empty Image Placeholder */}
+<div className="min-h-screen bg-background">
+      {/* Header - Event Image */}
       <section className={`pt-12 pb-16 px-4 sm:px-6 lg:px-8 ${isLoaded ? 'animate-fade-in-up' : 'opacity-0'}`}>
         <div className="max-w-5xl mx-auto">
-          {/* Title Image Placeholder */}
-          <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg bg-gradient-to-br from-light-gray via-background to-white border border-border flex items-center justify-center overflow-hidden">
-            <div className="text-center">
-              <p className="text-muted-foreground text-base sm:text-lg">Add Your Event Title Image Here</p>
-            </div>
+          {/* Title Image Container */}
+          <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg bg-gradient-to-br from-light-gray via-background to-white border border-border flex items-center justify-center overflow-hidden relative">
+            <img 
+              src="https://raw.githubusercontent.com/Lextargaryen/temp/24bfa08f596545c7dcbc98d5b6702958325452ac/MAIN_TEXT_LOW.png" 
+              alt="Event Title" 
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
+      </section>
+    </div>
       </section>
 
       {/* Voting Ended Title */}
